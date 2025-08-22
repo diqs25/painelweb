@@ -1,0 +1,56 @@
+        
+<div id="layout-content">
+   	<div class="topo">
+        <h2>Bem-vindo ao</h2>
+        <h1 id="nome-empresa-painel">CAIF</h1>
+        <div class="container-datahora">
+            <div class="clock">
+              <ul class="time">
+                  <li id="hours"></li>
+                  <li id="point">:</li>
+                  <li id="min"></li>
+              </ul>
+            </div>
+            <div class="container-date">
+                <div id="date"></div>
+                <div id="day"></div>   
+            </div>
+        </div>
+    </div>
+	
+	<div id="senha-container">
+        <div id="mensagem">
+            <span>{{ ultima.mensagem }}</span>
+        </div>
+		 <div class="row">
+            <div class="col-md-8">
+                <div id="senha" class="blink">
+                    <span>{{ ultima.texto }}</span>
+                </div>
+				<div id="servico" class="servico-local">
+                    <span>{{ ultima.servico }}</span>
+                </div>				
+            </div>
+            <div class="col-md-4">
+                <div id="local" class="local">
+                    <span>{{ ultima.local }}</span>
+                </div>
+                <div id="local-numero" class="numero-local">
+                    <span>{{ ultima.numeroLocal|pad:2 }}</span>
+                </div>				
+            </div>
+        </div>
+    </div>
+    <div id="historico">
+        <div class="senhas">
+            <div class="col-sm-3 senha-chamada {{ senha.styleClass }}" ng-repeat="senha in historico | limitTo: 4">
+                <div class="senha">
+                    <span>{{ senha.texto }}</span>
+                </div>
+                <div class="local">
+                    <span>{{ senha.local }} {{ senha.numeroLocal| pad:2 }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

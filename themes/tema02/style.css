@@ -1,0 +1,220 @@
+/** 
+ * HT layout - Painel Web
+ * @author Ramartins Rocha de Andrade <ramartins@sesa.pr.gov.br>
+ */
+  #layout {
+    background: #0055a3;
+}
+#layout, #layout * { 
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Topo */
+#layout .topo {    
+    height: 135px;
+}
+
+#layout .topo h1 {
+    font-size: 3vw;
+    margin-top: 0;
+    color: #eeff00;
+    padding: 10px;
+}
+
+#layout .topo h2 {
+    color: #eeff00;
+    font-weight: normal;
+    font-size: 2.5vw;
+    padding: 10px;
+}
+
+/* DATA E HORA */
+#layout .container-datahora {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    width: 40%;
+    height: 100%;
+    border-left: 70px solid transparent;
+    border-top: 92px solid #eff2f1;
+    display: inline-block;  
+}
+
+.clock {
+    position: fixed;
+    top: 10px;
+}
+.clock ul.time {
+    float: left;
+    clear: both;
+    margin: 10px 0 0 0;
+    padding:0px;
+    list-style:none;
+    text-align:center;
+}
+.clock ul.time li { 
+    display:inline;
+    color: #0055a3;
+    font-size: 4vw;
+    text-align: center;
+}
+.container-date {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    width: 20%;
+}
+.container-date #day { font-weight: bold; color: #0055a3; text-transform: uppercase; font-size:2vw; text-align:center; }
+.container-date #date { padding: 16px 0 0 5px; font-weight: bold; color: #0055a3; text-transform: uppercase; font-size:2vw; text-align:center; }
+.container-date #date span {font-weight: bold; color: #0055a3; }
+
+#point { position:relative; -moz-animation:animatePoint 1s ease infinite; -webkit-animation:animatePoint 1s ease infinite; padding: 0; }
+
+@-webkit-keyframes animatePoint {
+    0% {opacity:1.0; text-shadow:0 0 20px #00c6ff;}
+    50% {opacity:0; text-shadow:none; }
+    100% {opacity:1.0; text-shadow:0 0 20px #00c6ff; }  
+}
+@-moz-keyframes animatePoint {
+    0% {opacity:1.0; text-shadow:0 0 20px #00c6ff;}
+    50% {opacity:0; text-shadow:none; }
+    100% {opacity:1.0; text-shadow:0 0 20px #00c6ff; }  
+}
+
+/* 
+ * Senha Atual - Ultima senha chamada
+ */
+#mensagem {
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+
+#mensagem span {
+    padding: 15px 30px;
+    display: inline-block;	
+}
+
+#senha {
+    font-weight: bold;
+    text-align: center;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+#servico {
+	padding-bottom: 15px;
+	padding-left: 20px;	
+}
+#servico span{
+	padding: 20px;
+	display: inline-block;
+}
+
+/* local */
+
+#local {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#local-numero {    
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*
+ * Ultimas senhas chamadas
+ */
+#historico {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+	border-top: 5px solid #d6e5d6;
+}
+
+#historico .senhas {
+    padding-top: 6px;
+    padding-bottom: 8px;
+    overflow: hidden;
+}
+
+#historico .senhas div.senha-chamada {
+    text-align: center;
+    display: inline-block;
+}
+
+#historico .senhas div.senha-chamada div.senha { 
+    font-weight: bold; 
+    text-align: center; 
+}
+
+#historico .senhas div.senha-chamada div.local {
+    text-align: center;
+}
+
+/* cores - atendimento normal */
+/*#layout.normal { background-color: #0055a3; }*/
+#layout.normal #mensagem span { color: #eeff00; }
+#layout.normal #senha span { color: #eeff00; }
+#layout.normal #local span { color: #eeff00; }
+#layout.normal #servico {color:#eeff00;}
+#layout.normal #local-numero span { color: #eeff00; }
+#layout.normal #historico .senhas { background: rgba(0, 0, 0, .4); }
+#layout.normal #historico .senhas * { color: #eeff00; }
+#senha-container span { color:#eeff00; }
+
+/* cores - atendimento prioritario */
+/*#layout.prioridade { background-color: #0055a3; }*/
+#layout.prioridade #senha-container #mensagem span{color: #ff0000; /*text-shadow:#000 1px -1px, #000 -1px 1px, #000 1px 1px, #000 -1px -1px*/; }
+#layout.prioridade #senha { background-color: #ff0000; }
+#layout.prioridade #senha span{ color: #fff; }
+#layout.prioridade #historico .senhas { background: rgba(0, 0, 0, .4); }
+/*layout.prioridade #historico .senhas * { color: #eeff00; }*/
+
+/* cores - atendimento prioritario quando no historico */
+#historico .senhas * { color: #eeff00 !important; }
+#historico .senhas .prioridade * { color: #d2322d !important; }
+
+/* fonts */
+
+#mensagem span {
+    font-size: 4vw;
+}
+
+#senha span {
+    font-size: 16vw;
+}
+#servico span{
+	font-size: 5vw;
+}
+#local span {
+    font-size: 9vw;
+}
+
+#local-numero span {
+    font-size: 10vw;
+}
+
+.senha-chamada .senha span {
+    font-size: 5vw;
+}
+
+.senha-chamada .local span {
+    font-size: 4vw;
+}
+    
+
+
+/* 800x600 */
+@media only screen and (max-width: 800px) {
+    
+    #historico {
+        display: none;
+    }
+    
+}

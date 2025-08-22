@@ -1,0 +1,43 @@
+<div id="layout-content">
+	<!--<iframe id="slides-container" src="chrome-extension://ckblfoghkjhaclegefojbgllenffajdc/player.html#https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8" frameborder="0"></iframe>-->
+	<iframe id="slides-container" src="chrome-extension://ckblfoghkjhaclegefojbgllenffajdc/player.html#http://api.new.livestream.com/accounts/5381476/events/2395418/live.m3u8" frameborder="0"></iframe>
+	<div id="barra-lateral">
+		<div id="senha-container"> 
+			<div id="mensagem">
+				<span>{{ ultima.mensagem }}</span>
+			</div>
+			<div class="row">
+				<div>
+					<div id="senha" class="blink">
+						<span>{{ ultima.texto }}</span>
+					</div>
+				</div>
+				<div>
+					<div id="local" class="local">
+						<span>{{ ultima.local }}</span>
+					</div>
+					<div id="local-numero" class="numero-local">
+						<span>{{ ultima.numeroLocal|pad:2}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="separador"></div>
+		<div id="relogio-container">
+			<iframe id="relogio" src="themes/prefa/relogio.html" frameborder="0"></iframe>
+		</div>
+	</div>
+	
+    <div id="historico">
+        <div class="senhas">
+            <div class="col-sm-3 senha-chamada {{ senha.styleClass }}" ng-repeat="senha in historico | limitTo: 4">
+                <div class="senha">
+                    <span>{{ senha.texto }}</span>
+                </div>
+                <div class="local">
+                    <span>{{ senha.local }}: {{ senha.numeroLocal }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

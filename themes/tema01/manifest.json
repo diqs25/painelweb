@@ -1,0 +1,13 @@
+{
+    "name": "HT",
+    "description": "Layout Reponsivo Hospital do Trabalhador do Painel Web",
+    "authors": [
+        {
+            "name": "Ramartins Rocha de Andrade", 
+            "email": "ramartins@sesa.pr.gov.br"
+        }
+    ],
+	"events": {
+        "onload": "DataHora"
+		}
+}
